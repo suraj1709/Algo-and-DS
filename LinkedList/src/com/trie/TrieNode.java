@@ -106,4 +106,15 @@ public class TrieNode {
 
     }
 
+    public static void main(String[] args) {
+        TrieNode trienode= new TrieNode();
+        trienode.insertWord("abc");
+        trienode.insertWord("abz");
+        trienode.insertWord("abx");
+        System.out.println(trienode.searchWord("abz")); //true
+        System.out.println(trienode.seacrhByPrefix("az")); //false
+        System.out.println(trienode.nextChar("ab"));//[abc, abx, abz]
+
+    }
+
 }
