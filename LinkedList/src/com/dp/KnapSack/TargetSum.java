@@ -1,19 +1,30 @@
-package com.dp;
+package com.dp.KnapSack;
 
-public class SubsetSum {
-    public boolean subsetSum(int val[],int sum)
+public class TargetSum {
+    public int targetSum(int val[],int sum)
     {
-        boolean[][] arr= new boolean[val.length+1][sum+1];
+        int count=0;
+        for(int i=0;i<val.length;i++)
+        {
+            count+=val[i];
+        }
+        int s1=(count+sum)/2;
+        return subsetCount(val,s1);
+
+    }
+    public int subsetCount(int val[],int sum)
+    {
+        int[][] arr= new int[val.length+1][sum+1];
         for(int i=0;i<arr.length;i++)
         {
             for(int j=0;j<arr[0].length;j++)
             {
                 if(i==0)
                 {
-                    arr[i][j]=false;
+                    arr[i][j]=0;
                 }
                 if(j==0){
-                    arr[i][j]=true;
+                    arr[i][j]=1;
                 }
             }
         }
@@ -23,7 +34,7 @@ public class SubsetSum {
             {
                 if(j-val[i-1]>=0)
                 {
-                    arr[i][j]=(arr[i-1][j]) || (arr[i-1][j-val[i-1]]);
+                    arr[i][j]=(arr[i-1][j]) +(arr[i-1][j-val[i-1]]);
                 }
                 else
                 {
@@ -36,10 +47,9 @@ public class SubsetSum {
 
     public static void main(String[] args) {
         int wt[]={1,2,3,4};
-        int val[]={4,8,9,2};
         int W=5;
-        SubsetSum subsetSum= new SubsetSum();
-        boolean result=subsetSum.subsetSum(wt,W);
+        TargetSum targetSum= new TargetSum();
+        int result=targetSum.targetSum(wt,W);
         System.out.println(result);
     }
 }

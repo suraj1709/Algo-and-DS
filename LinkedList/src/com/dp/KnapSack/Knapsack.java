@@ -1,4 +1,4 @@
-package com.dp;
+package com.dp.KnapSack;
 
 public class Knapsack {
     public int maxProfit(int wt[],int val[],int W)

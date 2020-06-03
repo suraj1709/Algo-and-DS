@@ -1,17 +1,6 @@
-package com.dp;
+package com.dp.KnapSack;
 
-public class TargetSum {
-    public int targetSum(int val[],int sum)
-    {
-        int count=0;
-        for(int i=0;i<val.length;i++)
-        {
-            count+=val[i];
-        }
-        int s1=(count+sum)/2;
-        return subsetCount(val,s1);
-
-    }
+public class SubsetCount {
     public int subsetCount(int val[],int sum)
     {
         int[][] arr= new int[val.length+1][sum+1];
@@ -47,9 +36,10 @@ public class TargetSum {
 
     public static void main(String[] args) {
         int wt[]={1,2,3,4};
+        int val[]={4,8,9,2};
         int W=5;
-        TargetSum targetSum= new TargetSum();
-        int result=targetSum.targetSum(wt,W);
+        SubsetCount subsetCount= new SubsetCount();
+        int result=subsetCount.subsetCount(wt,W);
         System.out.println(result);
     }
 }

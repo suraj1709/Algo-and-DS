@@ -1,6 +1,4 @@
-package com.dp;
-import java.util.ArrayList;
-import java.util.List;
+package com.dp.KnapSack;
 
 public class MinimumSubset {
     public  int minimumSubsetSum(int val[])
@@ -59,7 +57,7 @@ public class MinimumSubset {
 
     public static void main(String[] args) {
         int[] val={8,1,2,5,6};
-        
+
         MinimumSubset minimumSubset= new MinimumSubset();
         int result=minimumSubset.minimumSubsetSum(val);
         System.out.println(result);

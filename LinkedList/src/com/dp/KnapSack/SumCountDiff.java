@@ -1,6 +1,17 @@
-package com.dp;
+package com.dp.KnapSack;
 
-public class SubsetCount {
+public class SumCountDiff {
+    public int sumCountDiff(int val[],int sum)
+    {
+        int count=0;
+        for(int i=0;i<val.length;i++)
+        {
+            count+=val[i];
+        }
+        int s1=(count+sum)/2;
+        return subsetCount(val,s1);
+
+    }
     public int subsetCount(int val[],int sum)
     {
         int[][] arr= new int[val.length+1][sum+1];
@@ -36,10 +47,9 @@ public class SubsetCount {
 
     public static void main(String[] args) {
         int wt[]={1,2,3,4};
-        int val[]={4,8,9,2};
         int W=5;
-        SubsetCount subsetCount= new SubsetCount();
-        int result=subsetCount.subsetCount(wt,W);
+        SumCountDiff sumCountDiff= new SumCountDiff();
+        int result=sumCountDiff.sumCountDiff(wt,W);
         System.out.println(result);
     }
 }
